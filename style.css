@@ -1,6 +1,6 @@
 canvas {
   border: 1px solid black;
-  background: #F2F2F2;
+  background: #FAFAFA;
   position: absolute;
   right: 0;
   left: 0;
@@ -10,13 +10,13 @@ canvas {
   display: block;
 }
 
-.buttonContainer {
+/*.buttonContainer {
   position: relative;
   top: 25px;
   left: 50%;
   width: 80px;
   height: 100px;
-}
+}*/
 
 .class="button" {
   float: left;
@@ -27,10 +27,52 @@ canvas {
 }
 
 #clear {
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 46px
 }
 
 body {
   margin: 0;
+}
+
+.navBar {
+  position: relative;
+}
+
+ul {
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2E9AFE;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none
+}
+
+li a:hover {
+  background-color: #0174DF;
+}
+
+.active {
+  background-color: #045FB4;
+}
+
+.login {
+  text-align: right;
+}
+
+.loginPage {
+  margin: 0 auto;
+  width: 100px; 
 }
