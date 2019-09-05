@@ -1,26 +1,39 @@
-var canvas = document.querySelector('canvas');
+window.addEventListener('load', () => {
+  const canvas = document.querySelector('canvas');
+  const c = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  // Resize the canvas to fill the screen
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-var c = canvas.getContext('2d');
+  let drawing = false;
 
-// drawing lines
-c.beginPath();
-c.moveTo(50, 300);
-c.lineTo(300, 100);
-c.lineTo(400, 300);
-c.strokeStyle = "#14103";
-c.stroke();
+  function startPosition(e){
+    drawing = true;
+    draw(e);
+  }
+  function endPosition(){
+    drawing = false;
+    c.beginPath();
+  }
 
-// drawing circlies
-for (var i = 0; i < 300; i++){
-  var x = Math.random() * window.innerWidth;
-  var y = Math.random() * window.innerHeight;
-  c.beginPath();
-  c.arc(x, y, 30, 0, Math.PI * 2, false);
-  c.strokeStyle = 'red';
-  c.stroke();
-}
+  function draw (e){
+    if(!drawing) return;
+    c.lineWidth = 5;
+    c.lineCap = 'round';
 
-console.log(canvas);
+    c.lineTo(e.clientX, e.clientY);
+    c.stroke();
+    c.beginPath();
+    c.moveTo(e.clientX, e.clientY);
+  }
+
+  document.getElementById('clear').addEventListener('click', function(){
+    c.clearRect(0, 0, canvas.width, canvas.height);
+  }, false);
+
+  // Event Listeners
+  canvas.addEventListener('mousedown', startPosition);
+  canvas.addEventListener('mouseup', endPosition);
+  canvas.addEventListener('mousemove', draw);
+});
