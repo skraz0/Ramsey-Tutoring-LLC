@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Math Tutor Board</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script> var socket = io(); </script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <!--<div class="buttonContainer">
+      <input class="button" type="button" id="clear" value="Clear"></input>
+    </div>-->
+
+    <div class="navBar">
+      <ul>
+        <li><a class="active" href="index.html">MathTutorBoard</a></li>
+        <li><input class="button" type="button" id="clear" value="Clear"></input></li>
+        <li><a class="login" href="login.html">Login</a></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="canvas.js"></script>
+
+  </body>
+</html>

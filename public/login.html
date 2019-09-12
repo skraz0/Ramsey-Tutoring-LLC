@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Math Tutor Board</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script> var socket = io(); </script>
+  </head>
+  <body>
+
+    <div class="navBar">
+      <ul>
+        <li><a class="active" href="index.html">MathTutorBoard</a></li>
+        <li><input class="button" type="button" id="clear" value="Clear"></input></li>
+        <li><a class="login" href="login.html">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="loginPage">
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+    </div>
+
+  </body>
+</html>

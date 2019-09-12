@@ -1,0 +1,21 @@
+{
+  "name": "ramsey_tutoring_llc",
+  "version": "1.0.0",
+  "description": "collaborative math tutoring board",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://matthewcapdeville@bitbucket.org/matthewcapdeville/cmps-411-mathtutorboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/matthewcapdeville/cmps-411-mathtutorboard#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  }
+}
