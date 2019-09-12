@@ -23,7 +23,7 @@ canvas {
 }
 
 #canvas {
-  z-index: 0;
+  z-index: -1;
 }
 
 #clear {
@@ -33,4 +33,69 @@ canvas {
 
 body {
   margin: 0;
+}
+.navbar {
+  overflow: hidden;
+  position: sticky;
+  background-color: #243CFE;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Add a dark blue background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #061061;
+}
+.footer{
+  position: absolute;
+  bottom: 10px;
+}
+/*Calendar stuff */
+
+#fullDiv {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+  display: block;
+  width: 14.2857%;
+  text-align: center;
+  list-style-type: none;
+}
+
+li:nth-child(n+3):nth-child(-n+9) {
+  font-weight: 900;
+  color: #e67e22;
+}
+
+li:nth-child(n+39), li:nth-child(n+8):nth-child(-n+16) {
+  font-weight: 900;
+  color: rgba(0,0,0,.3);
+}
+
+li:hover:nth-child(n+8):nth-child(-n+38), li:nth-child(17){
+  border-radius: 5px;
+  background-color: #1abc9c;
+  color: #ecf0f1;
 }
