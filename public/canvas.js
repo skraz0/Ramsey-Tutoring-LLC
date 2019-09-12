@@ -61,6 +61,18 @@ window.addEventListener('load', () => {
     c.clearRect(0, 0, canvas.width, canvas.height);
   }, false);
 
+  document.getElementById('blackPen').addEventListener('click', function(){
+    c.strokeStyle = '#000000';
+  }, false);
+
+  document.getElementById('bluePen').addEventListener('click', function(){
+    c.strokeStyle = '#115bbd';
+  }, false);
+
+  document.getElementById('redPen').addEventListener('click', function(){
+    c.strokeStyle = '#ff0000';
+  }, false);
+
   // Event Listeners
   canvas.addEventListener('mousedown', startPosition);
   canvas.addEventListener('mouseup', endPosition);
