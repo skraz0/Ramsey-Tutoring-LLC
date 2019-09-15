@@ -2,29 +2,40 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Math Tutor Board</title>
+    <title>Login - Ramsey Tutoring LLC</title>
     <link rel="stylesheet" href="./style.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
-    <script src="/socket.io/socket.io.js"></script>
-    <script> var socket = io(); </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="311146092934-c10c7oriht1jtmjjusi4hc52pu9b45ac.apps.googleusercontent.com">
+    <script type="text/javascript" src="login.js"></script>
   </head>
   <body>
 
     <div class="navBar">
       <ul>
-        <li><a class="active" href="index.html">MathTutorBoard</a></li>
-        <li><input class="button" type="button" id="clear" value="Clear"></input></li>
-        <li><a class="login" href="login.html">Login</a></li>
+        <li><a href="./index.html">Ramsey Tutoring LLC</a></li>
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./calendar.html">Calendar</a></li>
       </ul>
     </div>
 
-    <div class="loginPage">
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
-      </form>
+    <div class="g-signin2" data-theme="dark" data-longtitle="true" data-onsuccess="onSignIn"></div>
+
+    <div class="footer">
+      <a href="./TOS.html">Terms of Service</a>
     </div>
+
+    <!--<div class="loginPage">
+      <form action="./ToS.html">
+        First name:<br>
+        <input type="text" name="firstname" value="">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>-->
 
   </body>
 </html>
