@@ -1,5 +1,3 @@
-var socket;
-
 window.addEventListener('load', () => {
   const canvas = document.querySelector('canvas');
   const c = canvas.getContext('2d');
@@ -19,21 +17,6 @@ window.addEventListener('load', () => {
     c.beginPath();
   }
 
-  socket = socket.io.connect('http://localhost:3000');
-
-  /*socket.on('mouse',
-    function (data) {
-      console.log('Got: ' + data.x + ' ' + data.y);
-      c.lineWidth = 5;
-      c.lineCap = 'round';
-
-      c.lineTo(data.x, data.y);
-      c.stroke();
-      c.beginPath();
-      c.moveTo(data.x, data.y);
-      sendMouse(data.x, data.y);
-    });*/
-
   function draw (e){
     if(!drawing) return;
     c.lineWidth = 5;
@@ -43,18 +26,6 @@ window.addEventListener('load', () => {
     c.stroke();
     c.beginPath();
     c.moveTo(e.clientX, e.clientY);
-    sendMouse(e.clientX, e.clientY);
-  }
-
-  function sendMouse (xPos, yPos) {
-    //console.log('sendMouse: ' + xPos + ' ' + yPos);
-
-    var data = {
-      x: xPos,
-      y: yPos
-    };
-
-    socket.emit('mouse', data);
   }
 
   document.getElementById('clear').addEventListener('click', function(){
