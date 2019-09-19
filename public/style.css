@@ -1,5 +1,6 @@
 canvas {
   border: 1px solid black;
+<<<<<<< HEAD
   background: #FAFAFA;
   position: absolute;
   right: 0;
@@ -17,15 +18,20 @@ canvas {
 #clear {
   width: 100px;
   height: 46px
+=======
+>>>>>>> bootstrapTest
 }
 
 body {
   margin: 0;
 }
 
-.navBar {
-  position: relative;
-  font-family: Arial;
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  top: 0;
 }
 
 .footer {
@@ -37,37 +43,8 @@ body {
   text-align: center;
 }
 
-ul {
-  z-index: 1;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #2E9AFE;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none
-}
-
-li a:hover {
-  background-color: #0174DF;
-}
-
 .g-signin2 {
   position: fixed;
   margin-left: 100px;
   margin-top: 100px;
-}
-
-.data {
-  display: none;
 }
