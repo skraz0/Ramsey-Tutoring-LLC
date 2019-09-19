@@ -1,25 +1,5 @@
 canvas {
   border: 1px solid black;
-<<<<<<< HEAD
-  background: #FAFAFA;
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  display: block;
-}
-
-#canvas {
-  z-index: 0;
-}
-
-#clear {
-  width: 100px;
-  height: 46px
-=======
->>>>>>> bootstrapTest
 }
 
 body {
@@ -34,17 +14,10 @@ body {
   top: 0;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 5px;
-  width: 100%;
-  color: white;
-  text-align: center;
+.g-signin2 {
+
 }
 
-.g-signin2 {
-  position: fixed;
-  margin-left: 100px;
-  margin-top: 100px;
+.border-primary {
+  color: #ffffff;
 }

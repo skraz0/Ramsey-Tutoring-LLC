@@ -32,6 +32,10 @@ window.addEventListener('load', () => {
     c.clearRect(0, 0, canvas.width, canvas.height);
   }, false);
 
+  document.getElementById('eraser').addEventListener('click', function(){
+    c.strokeStyle = '#ffffff';
+  }, false);
+
   document.getElementById('blackPen').addEventListener('click', function(){
     c.strokeStyle = '#000000';
   }, false);
