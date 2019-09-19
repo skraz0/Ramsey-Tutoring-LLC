@@ -1,6 +1,6 @@
-canvas {
+/* canvas {
   border: 1px solid black;
-}
+} */
 
 body {
   margin: 0;
@@ -20,4 +20,14 @@ body {
 
 .border-primary {
   color: #ffffff;
+}
+
+.canvas {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }

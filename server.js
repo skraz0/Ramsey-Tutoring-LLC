@@ -1,33 +1,15 @@
-var express = require('express');
-var socket = require('socket.io');
-
-var app = express();
-var server = app.listen(process.env.PORT || 3000, listen);
-
-function listen() {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log('App is listening at http://' + host + ':' + port);
-}
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-var io = socket(server);
+function onConnection(socket){
+  socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
+}
 
-io.sockets.on('connection',
-  function (socket) {
-    console.log('A new user connected: ' + socket.id);
+io.on('connection', onConnection);
 
-    socket.on('mouse',
-      function (data) {
-        console.log("Received: 'mouse' " + data.x + " " + data.y);
-
-        socket.broadcast.emit('mouse', data);
-      }
-    );
-
-    socket.on('disconnect', function() {
-      console.log('User has disconnected.');
-    });
-  }
-);
+http.listen(port, () => console.log('listening on port ' + port));
