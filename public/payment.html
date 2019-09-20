@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Payment - Ramsey Tutoring LLC</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+  </head>
+  <body>
+
+    <!-- top navigation bar -->
+    <div class="topnav">
+      <a href="javascript:window.location.reload(true)"><img src="pencil-16.png"> Ramsey Tutoring LLC</a>
+      <div class="dropdown">
+        <button class="dropbtn">Contact
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <label>Email: </label>
+          <label>Phone: </label>
+        </div>
+      </div>
+      <div class="topnav-right">
+          <a href="./index.html">Logout</a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <!-- payment card -->
+    <div class="card">
+     <div class="container">
+       <h2>Payment</h2>
+       <hr><br>
+       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_donations" />
+          <input type="hidden" name="business" value="<!-- ENTER AN EMAIL ADDRESS OF A PAYPAL ACCOUNT -->" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+     </div>
+    </div>
+
+  </body>
+</html>

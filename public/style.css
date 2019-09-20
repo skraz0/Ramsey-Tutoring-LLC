@@ -85,6 +85,10 @@ body {
   color: black;
 }
 
+.topnav-right {
+  float: right;
+}
+
 
 /* login card */
 .card {
