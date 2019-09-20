@@ -2,91 +2,53 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Ramsey Tutoring LLC</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Login - Ramsey Tutoring LLC</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="311146092934-c10c7oriht1jtmjjusi4hc52pu9b45ac.apps.googleusercontent.com">
+    <script type="text/javascript" src="login.js"></script>
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <span class="navbar-brand mb-0 h1">Ramsey Tutoring LLC</span>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./login.html">Logout</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="/icons/edit-2.svg" width="30" height="30" alt="">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#" id="blackPen">Black</a>
-              <a class="dropdown-item" href="#" id="bluePen">Blue</a>
-              <a class="dropdown-item" href="#" id="redPen" color="red">Red</a>
-            </div>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="eraser">
-              <img src="/icons/edit.svg" width="30" height="30" alt="">
-            </a>
-          </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="clear">
-              <img src="/icons/trash-2.svg" width="30" height="30" alt="">
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="/icons/message-square.svg" width="30" height="30" alt="">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <ul id="messages"></ul>
-              <form action="">
-                <input id="m" autocomplete="off" /><button>Send</button>
-              </form>
-
-              <script src="/socket.io/socket.io.js"></script>
-                <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-                <script>
-                  $(function () {
-                    var socket = io();
-                    $('form').submit(function(e){
-                      e.preventDefault(); // prevents page reloading
-                      socket.emit('chat message', $('#m').val());
-                      $('#m').val('');
-                      return false;
-                    });
-                    socket.on('chat message', function(msg){
-                      $('#messages').append($('<li>').text(msg));
-                    });
-                  });
-                </script>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="colors">
-                <div class="color black"></div>
-                <div class="color red"></div>
-                <div class="color green"></div>
-                <div class="color blue"></div>
-                <div class="color yellow"></div>
-            </div>
-          </li>
-        </ul>
+    <!-- top navigation bar -->
+    <div class="topnav">
+      <a href="."><img src="pencil-16.png"> Ramsey Tutoring LLC</a>
+      <div class="dropdown">
+        <button class="dropbtn">Contact
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <label>Email: </label>
+          <label>Phone: </label>
+        </div>
       </div>
-    </nav>
+    </div>
 
-    <canvas class="canvas"></canvas>
+    <br><br><br>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="draw.js"></script>
+    <!-- login card -->
+    <div class="card">
+     <div class="container">
+       <h2>Login</h2>
+       <hr><br>
+       <div class="g-signin2" data-theme="dark" data-longtitle="true" data-onsuccess="onSignIn"></div><br> <!-- google login -->
+       <h2>OR</h2><br>
+       <form action="./board.html">
+         <input type="submit" class="btn btn-color" value="Test It Out" />
+       </form>
+     </div>
+    </div>
 
-    <!-- bootstrap scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <br><br><br>
+
+    <!-- login card -->
+    <div class="card">
+     <div class="container">
+       <h2>About</h2>
+       <hr>
+     </div>
+    </div>
+
   </body>
 </html>

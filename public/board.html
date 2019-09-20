@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ramsey Tutoring LLC</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+  </head>
+  <body>
+
+    <!-- side nav bar -->
+    <div id="mySidenav" class="sidenav">
+     <a href="./index.html" id="logout"><img src="/icons/log-out.svg" height="30" width="30"></img></a>
+     <a href="#" id="pen"><img src="/icons/edit-2.svg" height="30" width="30"></a>
+     <a href="#" id="eraser"><img src="/icons/edit.svg" height="30" width="30"></a>
+     <a href="#" id="clear"><img src="/icons/trash-2.svg" height="30" width="30"></a>
+     <a href="#" id="chat"><img src="/icons/message-square.svg" height="30" width="30"></a>
+     <a href="#" id="voice"><img src="/icons/mic.svg" height="30" width="30"></a>
+    </div>
+
+    <!-- creating the canvas -->
+    <canvas class="canvas"></canvas>
+
+    <!-- js files for drawing on the canvas -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="draw.js"></script>
+
+  </body>
+</html>
