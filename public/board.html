@@ -10,12 +10,19 @@
 
     <!-- side nav bar -->
     <div id="mySidenav" class="sidenav">
-     <a href="./index.html" id="logout"><img src="/icons/log-out.svg" height="30" width="30"></img></a>
-     <a href="#" id="pen"><img src="/icons/edit-2.svg" height="30" width="30"></a>
-     <a href="#" id="eraser"><img src="/icons/edit.svg" height="30" width="30"></a>
-     <a href="#" id="clear"><img src="/icons/trash-2.svg" height="30" width="30"></a>
-     <a href="#" id="chat"><img src="/icons/message-square.svg" height="30" width="30"></a>
-     <a href="#" id="voice"><img src="/icons/mic.svg" height="30" width="30"></a>
+     <a href="#" id="pen"><img src="/icons/pen-solid.svg" height="30" width="30"></a>
+     <a href="#" id="palette"><img src="/icons/palette-solid.svg" height="30" width="30" onclick="dropDown()" class="penDropdown"></a>
+     <div id="colorDropdown" class="colors">
+       <div class="color black"></div>
+       <div class="color red"></div>
+       <div class="color green"></div>
+       <div class="color blue"></div>
+     </div>
+     <a href="#" id="eraser"><img src="/icons/eraser-solid.svg" height="30" width="30" class="color white"></a>
+     <a href="#" id="clear"><img src="/icons/trash-solid.svg" height="30" width="30"></a>
+     <a href="#" id="chat"><img src="/icons/comment-dots-solid.svg" height="30" width="30"></a>
+     <a href="#" id="voice"><img src="/icons/microphone-solid.svg" height="30" width="30"></a>
+     <a href="./index.html" id="logout"><img src="/icons/sign-out-alt-solid.svg" height="30" width="30"></img></a>
     </div>
 
     <!-- creating the canvas -->
@@ -24,6 +31,27 @@
     <!-- js files for drawing on the canvas -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="draw.js"></script>
+
+    <!-- js function for pen dropdown -->
+    <script>
+      function dropDown() {
+        document.getElementById("colorDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.penDropdown')) {
+          var dropdowns = document.getElementsByClassName("colors");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
 
   </body>
 </html>
