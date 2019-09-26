@@ -75,7 +75,7 @@ body {
   text-decoration: none;
   font-size: 17px;
   font-family: Arial;
-  height: 18px;
+  height: 19px;
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
@@ -125,7 +125,7 @@ body {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
