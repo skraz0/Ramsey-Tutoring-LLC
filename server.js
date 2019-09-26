@@ -8,6 +8,7 @@ app.use(express.static('public'));
 
 function onConnection(socket){
   socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
+  socket.on('clear', clearCanvas) => socket.broadcast('clear', clearCanvas);
 }
 
 io.on('connection', onConnection);
