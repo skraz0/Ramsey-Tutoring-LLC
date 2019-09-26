@@ -19,6 +19,16 @@ body {
 
 }
 
+/* Chat stuff */
+
+#messageForm{
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  right: 0%;
+
+}
+
 #mySidenav a {
   position: absolute; /* Position them relative to the browser window */
   top: 0;

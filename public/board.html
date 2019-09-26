@@ -20,7 +20,7 @@
      </div>
      <a href="#" id="eraser"><img src="/icons/eraser-solid.svg" height="30" width="30" class="color white"></a>
      <a href="#" id="clear"><img src="/icons/trash-solid.svg" height="30" width="30"></a>
-     <a href="#" id="chat"><img src="/icons/comment-dots-solid.svg" height="30" width="30"></a>
+     <a href="#" id="chat"><img src="/icons/comment-dots-solid.svg" height="30" width="30" onclick="showChat()" class="chatButton"></a>
      <a href="#" id="voice"><img src="/icons/microphone-solid.svg" height="30" width="30"></a>
      <a href="./index.html" id="logout"><img src="/icons/sign-out-alt-solid.svg" height="30" width="30"></img></a>
     </div>
@@ -31,6 +31,18 @@
     <!-- js files for drawing on the canvas -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="draw.js"></script>
+    <script src="chat.js"></script>
+    <script>
+      var socket.io();
+    </script>
+
+    <div hidden class="messageForm" id="messageForm">
+
+        <form id="messageForm" class="chat" action="" method="post">
+          <input type="text" name="message" value=""> <button type="button" name="messageSend">Send</button>
+
+        </form>
+      </div>
 
     <!-- js function for pen dropdown -->
     <script>
@@ -51,6 +63,20 @@
           }
         }
       }
+    </script>
+
+    <script>
+      function showChat() {
+        var c = document.getElementById("messageForm");
+        if (c.style.display === "hidden") {
+            c.style.display = "none";
+          }
+        else {
+        c.style.display = "block";
+              }
+      }
+
+
     </script>
 
   </body>
