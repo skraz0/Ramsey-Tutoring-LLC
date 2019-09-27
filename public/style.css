@@ -19,16 +19,6 @@ body {
 
 }
 
-/* Chat stuff */
-
-#messageForm{
-  position: absolute;
-  top: 100%;
-  bottom: 0;
-  right: 0%;
-
-}
-
 #mySidenav a {
   position: absolute; /* Position them relative to the browser window */
   top: 0;
@@ -193,6 +183,16 @@ body {
   color: white;
 }
 
+.send-color {
+  border-color: #333;
+  color: #333;
+}
+
+.send-color:hover {
+  background: #333;
+  color: white;
+}
+
 
 /* change pen colors */
 .colors {
@@ -221,3 +221,18 @@ body {
 .color.white { background-color: white; }
 
 .show {display:block;}
+
+
+/* Chat stuff */
+#messageForm {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+}
+
+.chatField {
+  border: none;
+  border-color: transparent;
+}
