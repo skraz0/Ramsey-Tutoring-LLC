@@ -8,7 +8,11 @@ app.use(express.static('public'));
 
 function onConnection(socket){
   socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
+<<<<<<< HEAD
   // socket.on('clear', clearCanvas) => socket.broadcast('clear', clearCanvas);
+=======
+//  socket.on('clear', clearCanvas) => socket.broadcast('clear', clearCanvas);
+>>>>>>> d5f63738ebfbcb80f7c4615bd6f8232b1d3f5f14
 }
 
 io.on('connection', onConnection);
