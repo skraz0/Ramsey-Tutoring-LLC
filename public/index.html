@@ -19,9 +19,11 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <label><b>Email:</b> catherine.ramsey2005@gmail.com</label>
-          <label><b>Phone:</b> (000)-000-0000</label>
+          <label><b>Email:</b> c.ramsey.tutoring@gmail.com</label>
         </div>
+      </div>
+      <div id="logout" class="topnav-right">
+          <a href="#" onclick="signOut()">Logout</a>
       </div>
     </div>
 
@@ -32,7 +34,7 @@
      <div class="container">
        <h2>Login</h2>
        <hr><br>
-       <div class="g-signin2" data-theme="dark" data-longtitle="true" data-onsuccess="onSignIn"></div><br> <!-- google login -->
+       <div class="g-signin2" data-theme="dark" data-longtitle="true" data-onsuccess="onSignIn" onclick="showLogout()"></div><br> <!-- google login -->
        <h2>OR</h2><br>
        <form action="./board.html">
          <input type="submit" class="btn btn-color" value="Test It Out" />
@@ -49,6 +51,21 @@
        <hr>
      </div>
     </div>
+
+    <script src="login.js"></script>
+
+    <script>
+      function showLogout() {
+        document.getElementById('logout').style.display = "block";
+      }
+
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
 
   </body>
 </html>
