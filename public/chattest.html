@@ -8,20 +8,22 @@
 
 
 <button class="open-button" onclick="openForm()">Chat</button>
-<ul>
+
 
 
 <div class="chat-popup" id="form">
-  <form id="messages"action="" class="form-container messages">
-    <h1>Chat</h1>
-		
-    <!-- <textarea placeholder="Type message.." name="msg" required></textarea> -->
-		<input id="m"type="text" name="" value="">
-    <!-- <button id="m" type="submit" class="btn">Send</button> -->
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
+<br>
+	<div class="chatArea">
+			<ul id="messages" class="messages"></ul>
+		</div>
+			  <form id="messages"action="" class="form-container messages">
+
+					<input id="m" class="textarea" type="text" name="" placeholder="Press Enter to Send" value="">
+			    <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+
+			  </form>
 </div>
-</ul>
+
 <script>
 function openForm() {
   document.getElementById("form").style.display = "block";
@@ -44,7 +46,7 @@ function closeForm() {
       return false;
     });
     socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
+      $('#messages').append($('<div>').text(msg));
     });
   });
 </script>

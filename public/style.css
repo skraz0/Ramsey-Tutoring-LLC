@@ -244,7 +244,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
+  background-color: #4083db;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -254,15 +254,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
   bottom: 23px;
   right: 28px;
   width: 280px;
+  z-index: 1;
 }
 
 /* The popup chat - hidden by default */
 .chat-popup {
   display: none;
   position: fixed;
+  background-color: white;
   bottom: 0;
   right: 15px;
-  border: 3px solid #f1f1f1;
+  border: 3px solid #4083db;
+  width: 300px;
   z-index: 9;
 }
 
@@ -305,6 +308,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
+}
+
+#m{
+
+  width: 100%;
 }
 
 /* Add some hover effects to buttons */
