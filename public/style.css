@@ -44,20 +44,20 @@ body {
   left: 120px;
 }
 
-#clear {
+/* #clear {
+  left: 180px;
+} */
+
+#chat {
   left: 180px;
 }
 
-#chat {
+#voice {
   left: 240px;
 }
 
-#voice {
-  left: 300px;
-}
-
 #logout {
-  left: 360px;
+  left: 300px;
 }
 
 
@@ -262,7 +262,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display: none;
   position: fixed;
   background-color: white;
-  bottom: 0;
+  bottom: 15px;
   right: 15px;
   border: 3px solid #4083db;
   width: 300px;
