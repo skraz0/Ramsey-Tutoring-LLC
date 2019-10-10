@@ -14,3 +14,25 @@ function onConnection(socket){
 io.on('connection', onConnection);
 
 http.listen(port, () => console.log('listening on port ' + port));
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/chattest.html');
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
