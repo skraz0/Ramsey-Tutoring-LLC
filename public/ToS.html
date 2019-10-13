@@ -8,15 +8,6 @@
   </head>
   <body>
 
-    <script type="text/javascript">
-      function copyEmail() {
-        var copyText = document.getElementById("email");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        document.execCommand("copy");
-      }
-    </script>
-
     <!-- top navigation bar -->
     <div class="topnav">
       <a href="javascript:window.location.reload(true)"><img src="pencil-16.png"> Ramsey Tutoring LLC</a>
@@ -26,11 +17,10 @@
         </button>
         <div class="dropdown-content">
           <label><b>Email:</b> catherine.ramsey2005@gmail.com</label>
-          <label><b>Phone:</b> (000)-000-0000</label>
         </div>
       </div>
       <div class="topnav-right">
-          <a href="./index.html">Logout</a>
+          <a href="/">Logout</a>
         </div>
     </div>
 
@@ -43,7 +33,7 @@
        <hr><br>
        <p>This website is provided as a public service. No warranty or guarantee is provided pertaining to the quality of data or service. By accepting this agreement, you assume full responsibility for any misuse of the information provided to you. All generated credit card numbers are fictional. While they will pass a basic validation check, they will not work to purchase anything. Corban Works cannot and will not provide real credit card numbers. You acknowledge that attempting to use these credit card numbers for anything other than testing or training purposes is fraud. Screen scraping is not permitted. If you need automated access to our data, please apply for an API key. In addition, by accepting this agreement you also indemnify and hold harmless Corban Works, its employees, agents, officers, affiliates, and host from any claims, costs, damages, or expenses resulting from injury, damage, loss, or legal action that may result from the use of the provided information. By accepting this agreement you acknowledge that the information provided is randomly generated, and should be considered fictional. Any similarities between generated identities and actual person(s) is completely coincidental. You agree to be bound by our license agreement. Customers may place as many free orders as they want, but are only allowed to have three (3) free orders in the queue at a time. We do not accept orders from customers using throw-away email addresses (Mailinator, Spambob, etc.) or email addresses with trusted delivery systems (Bluebottle, etc.). We reserve the right to cancel any order at any time for any reason with or without notice.
        </p><br>
-       <form class="ToS" action="scheduler.html">
+       <form class="ToS" action="/scheduler">
          <input type="checkbox" name="agree" value="Yes"> I agree to all terms shown above. <br><br>
          <input type="submit" value="Submit" class="btn btn-color">
        </form>
