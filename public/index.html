@@ -2,18 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login - Ramsey Tutoring LLC</title>
+    <title>Ramsey Tutoring LLC</title>
     <link rel="stylesheet" href="./style.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="311146092934-c10c7oriht1jtmjjusi4hc52pu9b45ac.apps.googleusercontent.com">
     <script type="text/javascript" src="login.js"></script>
   </head>
-  <body class="body-login">
+  <body class="body">
 
     <!-- top navigation bar -->
     <div class="topnav">
-      <a href="javascript:window.location.reload(true)"><img src="pencil-16.png"> Ramsey Tutoring LLC</a>
+      <a href="/">Ramsey Tutoring LLC</a>
       <div class="dropdown">
         <button class="dropbtn">Contact
           <i class="fa fa-caret-down"></i>
@@ -22,8 +22,8 @@
           <label><b>Email:</b> c.ramsey.tutoring@gmail.com</label>
         </div>
       </div>
-      <div id="logout" class="topnav-right">
-          <a href="#" onclick="signOut()">Logout</a>
+      <div class="topnav-right">
+          <a href="/login">Login</a>
       </div>
     </div>
 
@@ -31,35 +31,49 @@
 
     <br><br><br>
 
-    <!-- login card -->
-    <div class="card">
-     <div class="container">
-       <h2>Login</h2>
-       <hr><br>
-       <div class="g-signin2" data-theme="dark" data-longtitle="true" data-onsuccess="onSignIn" onclick="showLogout()"></div><br> <!-- google login -->
-       <h2>OR</h2><br>
-       <form action="/session">
-         <input type="submit" class="btn btn-color" value="Test It Out" />
-       </form>
-       <br><hr><br>
-       <a href="/terms" style="text-decoration: none; color: black;">Terms of Service</a>
-     </div>
+    <div class="homepage">
+      <h1 style="font-family: Arial; text-align: center; color: white;">Collaborative Math Whiteboard</h1>
+      <p style="font-family: Arial; text-align: center; color: white;">A great solution for math tutoring from anywhere you please. Done by Catherine Ramsey of the SELU Math Department.</p>
+      <br>
+      <input type="submit" class="btn btn-color" value="Get Started" onclick="showRegister()" />
+      <form action="/session" style="display: inline-block; padding: 5px 0px 5px;">
+        <input type="submit" class="btn btn-color" value="Test It Out" />
+      </form>
+      <input type="submit" class="btn btn-color" value="Terms of Service" onclick="showToS()" />
     </div>
 
-    <br><br><br>
+    <br><br>
+
+    <div class="card" id="register" style="display: none; width: 20%;">
+      <div class="container">
+        <h2>Register An Account</h2>
+        <hr><br>
+        <form class="#" action="index.html" method="post">
+          <input type="text" name="" placeholder="Email"><br><br>
+          <input type="text" name="" placeholder="Password"><br><br>
+          <input type="submit" name="" value="Register" class="btn btn-color"><br>
+        </form>
+      </div>
+    </div>
+
+    <div class="card" id="tos" style="display: none; width: 40%;">
+     <div class="container">
+       <h2>Terms of Service</h2>
+       <hr><br>
+       <p>This website is provided as a public service. No warranty or guarantee is provided pertaining to the quality of data or service. By accepting this agreement, you assume full responsibility for any misuse of the information provided to you. All generated credit card numbers are fictional. While they will pass a basic validation check, they will not work to purchase anything. Corban Works cannot and will not provide real credit card numbers. You acknowledge that attempting to use these credit card numbers for anything other than testing or training purposes is fraud. Screen scraping is not permitted. If you need automated access to our data, please apply for an API key. In addition, by accepting this agreement you also indemnify and hold harmless Corban Works, its employees, agents, officers, affiliates, and host from any claims, costs, damages, or expenses resulting from injury, damage, loss, or legal action that may result from the use of the provided information. By accepting this agreement you acknowledge that the information provided is randomly generated, and should be considered fictional. Any similarities between generated identities and actual person(s) is completely coincidental. You agree to be bound by our license agreement. Customers may place as many free orders as they want, but are only allowed to have three (3) free orders in the queue at a time. We do not accept orders from customers using throw-away email addresses (Mailinator, Spambob, etc.) or email addresses with trusted delivery systems (Bluebottle, etc.). We reserve the right to cancel any order at any time for any reason with or without notice.
+       </p><br>
+     </div>
+    </div>
 
     <script src="login.js"></script>
 
     <script>
-      function showLogout() {
-        document.getElementById('logout').style.display = "block";
+      function showRegister() {
+        document.getElementById('register').style.display = "block";
       }
 
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
-        });
+      function showToS() {
+        document.getElementById('tos').style.display = "block";
       }
     </script>
 
