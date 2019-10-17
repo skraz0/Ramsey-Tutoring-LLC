@@ -11,9 +11,19 @@
     <!-- top navigation bar -->
     <div class="topnav">
       <a href="/">Ramsey Tutoring LLC</a>
-      <div class="topnav-right">
-          <a href="/">Logout</a>
+      <div class="dropdown">
+        <button class="dropbtn">Contact
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <label><b>Email:</b> c.ramsey.tutoring@gmail.com</label>
         </div>
+      </div>
+      <div class="topnav-right">
+          <div class="data">
+            <img id="pic" class="img-circle" width="35" height="35">
+          </div>
+      </div>
     </div>
 
     <img src="math_symbols.jpg" id="watermark">
@@ -33,6 +43,9 @@
        </form>
      </div>
     </div>
+
+    <script src="login.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
   </body>
 </html>
