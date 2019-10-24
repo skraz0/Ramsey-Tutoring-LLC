@@ -10,8 +10,11 @@
 
     <!-- side nav bar -->
     <div id="mySidenav" class="sidenav">
-     <a href="#" id="pen"><img src="/icons/pen-solid.svg" height="30" width="30"></a>
-     <a href="#" id="palette"><img src="/icons/palette-solid.svg" height="30" width="30" onclick="dropDown()" class="penDropdown"></a>
+     <a href="#" id="pen"><img src="/icons/pen-solid.svg" height="30" width="30" onclick="sizeDropdown()" class="sizeDropdown"></a>
+     <div id="sizeDropdown" class="sizes">
+       <input  id="size" type="range" min="2" max="50" value="25">
+     </div>
+     <a href="#" id="palette"><img src="/icons/palette-solid.svg" height="30" width="30" onclick="colorDropdown()" class="colorDropdown"></a>
      <div id="colorDropdown" class="colors">
        <div class="color black"></div>
        <div class="color red"></div>
@@ -49,14 +52,32 @@
 
     <!-- pen dropdown -->
     <script>
-      function dropDown() {
+      function colorDropdown() {
         document.getElementById("colorDropdown").classList.toggle("show");
       }
 
       // Close the dropdown menu if the user clicks outside of it
       window.onclick = function(event) {
-        if (!event.target.matches('.penDropdown')) {
+        if (!event.target.matches('.colorDropdown')) {
           var dropdowns = document.getElementsByClassName("colors");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+      function sizeDropdown() {
+        document.getElementById("sizeDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.sizeDropdown')) {
+          var dropdowns = document.getElementsByClassName("sizes");
           var i;
           for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
