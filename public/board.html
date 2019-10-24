@@ -130,7 +130,7 @@
         socket.on('chat message', function(msg){
 
           $('#messages').append($('<div>').text(msg));
-          $scroll[0].scrollTop = $scroll[0].scrollHeight;
+          $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
         });
       });
     </script>
