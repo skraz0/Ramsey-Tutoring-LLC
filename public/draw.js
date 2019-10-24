@@ -38,7 +38,7 @@
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
     context.strokeStyle = color;
-    context.lineWidth = 2;
+    context.lineWidth = parseInt(document.getElementById("size").value);;
     context.stroke();
     context.closePath();
 
