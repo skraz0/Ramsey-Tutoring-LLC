@@ -322,16 +322,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%;
   margin-bottom:10px;
   opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+  height: 100px;
+  overflow-y: scroll;
 }
 
 #m {
 
   width: 100%;
+}
+.chatArea{
+  height: 200px;
+  overflow-y: scroll;
+  flex-grow: 1;
 }
 
 /* Add some hover effects to buttons */
