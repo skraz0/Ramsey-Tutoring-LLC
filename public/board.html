@@ -21,6 +21,7 @@
      <a href="#" id="eraser"><img src="/icons/eraser-solid.svg" height="30" width="30" class="color white"></a>
      <!-- <a href="#" id="clear"><img src="/icons/trash-solid.svg" height="30" width="30" id="clearIcon"></a> -->
      <a href="#" id="chat"><img src="/icons/comment-dots-solid.svg" height="30" width="30" onclick="openForm()" class="chatButton"></a>
+     <a href="#" id="chat"> <img src="/icons/chat-notification.png" height="30" width="30" onclick="openForm()" class="chatButton" hidden> </a>
      <a href="#" id="voice"><img src="/icons/microphone-solid.svg" height="30" width="30"></a>
      <a href="/" id="logout"><img src="/icons/sign-out-alt-solid.svg" height="30" width="30"></img></a>
     </div>
@@ -32,8 +33,7 @@
     		</div>
     			  <form id="messages"action="" class="form-container messages">
 
-    					<input id="m" class="textarea" type="text" name="" placeholder="Press Enter to Send" value="">
-    			    <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+    					<input id="m" class="textarea" type="text" name="" autocomplete="off" placeholder="Press Enter to Send" value="">
 
     			  </form>
     </div>
@@ -98,16 +98,33 @@
     <script>
       $(function () {
         var socket = io();
+        var scroll = '#m';
         $('form').submit(function(e){
           e.preventDefault(); // prevents page reloading
           socket.emit('chat message', $('#m').val());
           $('#m').val('');
           return false;
         });
+
         socket.on('chat message', function(msg){
+
           $('#messages').append($('<div>').text(msg));
+          $scroll[0].scrollTop = $scroll[0].scrollHeight;
         });
       });
     </script>
+
+<!-- script for left and right text -->
+<script type="socket">
+
+</script>
+    <!-- <script type="function">
+      function chatNotification() {
+        if((document.getElementById("form").style.display==="block")&&())
+      }
+
+    </script> -->
+
+
   </body>
 </html>
