@@ -332,7 +332,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%;
 }
 .chatArea{
-  height: 300px;
+  height: 200px;
   overflow-y: scroll;
   flex-grow: 1;
 }
