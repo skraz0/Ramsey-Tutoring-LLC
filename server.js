@@ -4,6 +4,9 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 
+const MongoClient = require('mongodb').MongoClient;
+const url = process.env.MONGODB_URI || "mongodb://heroku_whtv069m:p69n37kqpkjoj5adi8qrln53jd@ds043338.mlab.com:43338/heroku_whtv069m";
+
 app.use(express.static('public'));
 
 // endpoints for all pages of the site
@@ -15,6 +18,9 @@ app.get('/login', function (req, res) {
 });
 app.get('/terms', function (req, res) {
   res.sendFile(__dirname + '/public/ToS.html');
+});
+app.get('/preview', function (req, res) {
+  res.sendFile(__dirname + '/public/ToS_preview.html');
 });
 app.get('/scheduler', function (req, res) {
   res.sendFile(__dirname + '/public/scheduler.html');

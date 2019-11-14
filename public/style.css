@@ -7,7 +7,7 @@
   bottom: 0;
   top: 0;
   z-index: 0;
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 body {
@@ -283,9 +283,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: white;
   bottom: 15px;
   right: 15px;
-  border: 3px solid #1561ad;
   width: 300px;
   z-index: 9;
+  border-radius: 5px;
 }
 
 /* Add styles to the form container */
@@ -365,3 +365,7 @@ input[type=text]{
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+/* td {
+  border: 1px solid black;
+} */

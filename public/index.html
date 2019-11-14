@@ -32,9 +32,9 @@
 
     <img src="tropical-background-4.jpg" id="watermark">
 
-    <br><br><br>
+    <br><br><br><br>
 
-    <div class="homepage">
+    <!-- <div class="homepage">
       <h1 style="font-family: Arial; text-align: center; color: white;">Collaborative Math Whiteboard</h1>
       <p style="font-family: Arial; text-align: center; color: white;">A great solution for math tutoring from anywhere you please. Done by Catherine Ramsey of the SELU Math Department.</p>
       <br>
@@ -85,17 +85,32 @@
        </div>
        <br>
      </div>
-    </div>
+    </div> -->
 
-    <script>
-      function showLogin() {
-        document.getElementById('login').style.display = "block";
-      }
-
-      function showToS() {
-        document.getElementById('tos').style.display = "block";
-      }
-    </script>
+    <table style="z-index:1; margin:0 auto;">
+      <td id="table_about" style="width:60%; text-align:center;">
+        <h1 style="font-family: Arial; text-align: center; color: white;">Collaborative Math Whiteboard</h1>
+        <p style="font-family: Arial; text-align: center; color: white; margin:30px;">A great solution for math tutoring from anywhere you please. Done by Catherine Ramsey of the SELU Math Department.</p>
+        <br>
+        <form action="/session" style="display: inline-block; padding: 5px 0px 5px;">
+          <input type="submit" class="btn btn-color" value="Test It Out" />
+        </form>
+        <form action="/preview">
+          <input type="submit" class="btn btn-color" value="Terms of Service"/>
+        </form>
+      </td>
+      <td id="table_login" style="width:40%;">
+        <div class="card" id="login" style="width:60%;">
+          <div class="container">
+            <h2>Login</h2>
+            <br>
+            <div class="g-signin2" id="signInButton" scope="profile email" data-width="220" data-height="50" data-longtitle="true" data-theme="dark" data-onsuccess="onSignIn" data-onfailure="onFailure"></div>
+            <br>
+            <a href="#" onclick="signOut();" id="signOutButton" style="display: none;">Sign out</a>
+          </div>
+        </div>
+      </td>
+    </table>
 
     <script src="login.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>

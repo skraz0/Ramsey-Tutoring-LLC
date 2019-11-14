@@ -16,6 +16,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "google-auth-library": "^5.3.0",
+    "mongodb": "^3.3.4",
     "socket.io": "^2.2.0"
   }
 }
