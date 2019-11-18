@@ -11,9 +11,10 @@
     "type": "git",
     "url": "https://github.com/skraz0/Ramsey-Tutoring-LLC"
   },
-  "author": "Matthew Capdeville, Gerard Frommeyer, Richard Hunter, Matthew Adams",
+  "author": "Matthew Capdeville, Gerard Frommeyer, Richard Hunter",
   "license": "ISC",
   "dependencies": {
+    "assert": "^2.0.0",
     "express": "^4.17.1",
     "google-auth-library": "^5.3.0",
     "mongodb": "^3.3.4",
