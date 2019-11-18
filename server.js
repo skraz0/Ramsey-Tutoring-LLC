@@ -3,9 +3,16 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
+const assert = require('assert');
 
 const MongoClient = require('mongodb').MongoClient;
 const url = process.env.MONGODB_URI || "mongodb://heroku_whtv069m:p69n37kqpkjoj5adi8qrln53jd@ds043338.mlab.com:43338/heroku_whtv069m";
+
+// Use connect method to connect to the Server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  client.close();
+});
 
 app.use(express.static('public'));
 
@@ -56,12 +63,3 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
-
-// Google Login
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Logged in as ' + profile.getName());
-}
