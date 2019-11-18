@@ -19,7 +19,7 @@ app.get('/login', function (req, res) {
 app.get('/terms', function (req, res) {
   res.sendFile(__dirname + '/public/ToS.html');
 });
-app.get('/preview', function (req, res) {
+app.get('/terms-preview', function (req, res) {
   res.sendFile(__dirname + '/public/ToS_preview.html');
 });
 app.get('/scheduler', function (req, res) {
@@ -56,3 +56,12 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
+
+// Google Login
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Logged in as ' + profile.getName());
+}
