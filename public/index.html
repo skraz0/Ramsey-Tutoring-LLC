@@ -34,59 +34,6 @@
 
     <br><br><br><br>
 
-    <!-- <div class="homepage">
-      <h1 style="font-family: Arial; text-align: center; color: white;">Collaborative Math Whiteboard</h1>
-      <p style="font-family: Arial; text-align: center; color: white;">A great solution for math tutoring from anywhere you please. Done by Catherine Ramsey of the SELU Math Department.</p>
-      <br>
-      <input type="submit" class="btn btn-color" value="Login" onclick="showLogin()" />
-      <form action="/session" style="display: inline-block; padding: 5px 0px 5px;">
-        <input type="submit" class="btn btn-color" value="Test It Out" />
-      </form>
-      <input type="submit" class="btn btn-color" value="Terms of Service" onclick="showToS()" />
-    </div>
-
-    <br><br>
-
-    <div class="card" id="login" style="display: none; width: 21%">
-      <div class="container">
-        <h2>Login</h2>
-        <hr><br>
-        <div class="g-signin2" id="signInButton" scope="profile email" data-width="220" data-height="50" data-longtitle="true" data-theme="dark" data-onsuccess="onSignIn" data-onfailure="onFailure"></div>
-        <br>
-        <a href="#" onclick="signOut();" id="signOutButton" style="display: none;">Sign out</a>
-      </div>
-    </div>
-
-    <div class="card" id="tos" style="display: none; width: 50%;">
-     <div class="container">
-       <h2>Terms of Service</h2>
-       <hr><br>
-       <div style="height:300px;width:575px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-         Agreement between User and Ramsey’s Tutoring LLC
-         By using Ramsey’s Tutoring service, you are agreeing to be bound by these Terms. Please read the following Terms and Conditions carefully.
-         Personal Verification
-         If you are under the age of 18, you may only use Ramsey’s Tutoring service with the permission of a parent or guardian. By using this service, you are acknowledging that you are either over the age of 18, or you have the permission of your parent(s) or guardian to use the service.
-         If you are a student who is enrolled in a Southeastern Louisiana University mathematics class, you may not use this service. By using this service, you are acknowledging that you are not currently enrolled in such a class.
-         Your Account
-         You need a Google Account in order to use Ramsey’s Tutoring services. You are responsible for the activity that happens on or through your Google Account. If you use this site or service, you agree to accept responsibility for all activities that occur under your account or password. You acknowledge that Ramsey’s Tutoring LLC is not responsible for third party access to your account that results from theft or misappropriation of your account.
-         Payment Terms
-         Ramsey’s Tutoring LLC offers 1-hour mathematics tutoring sessions at $40/session. You are required to pay in full for each session upon booking a time slot, which is prior to the actual tutoring session. No tutoring session will officially be booked until it is confirmed by Ramsey’s Tutoring, and paid for by you. If for any reason you cancel a tutoring session, payment will not be refunded. However, if 48 hours advanced notice is given, you may reschedule the cancelled session without loss of payment.
-         Privacy
-         Apart from the necessary payment information, please do not give out any personally identifying information about yourself or your children through any of our communication services.
-         Tutoring Session
-         All session times are based on CST. You are expected to log into your account no later than 5 minutes prior to your sessions starting time. If you are more than 10 minutes late to your session start time, your session will be terminated an no refund will be given.
-         The interactive whiteboard will become available to you 5 minutes prior to your scheduled tutoring session, and it will only stay open 5 minutes past your session end time. If you have need to practice using a whiteboard before your scheduled session time, feel free to use the link on the homepage called “try it out.”
-         Use of Communication Services:
-         This site utilizes voice enables access, a chat box, a two-way whiteboard, and email as means of communication. You agree to use the communication services provided by this site only to post, send and receive messages and material that are proper and related to mathematics. You will not defame, abuse, harass, stalk, threaten, or otherwise violate the legal rights of others; publish, post, upload, distribute, or disseminate any inappropriate, profane, defamatory, infringing, obscene, indecent, or unlawful topic, name, material, or information. You will not upload files that contain viruses, corrupted files, or any similar software or program that may damage the operation of the website or tutoring service.
-         Termination of Service
-         Ramsey’s Tutoring LLC reserves the right to refuse or cancel service, terminate accounts, or modify Terms at our sole discretion. We will notify you prior to any new terms taking place.
-
-         If you have any questions about these Terms, please contact me at c.ramsey.tutoring@gmail.com
-       </div>
-       <br>
-     </div>
-    </div> -->
-
     <table style="z-index:1; margin:0 auto;">
       <td id="table_about" style="width:60%; text-align:center;">
         <h1 style="font-family: Arial; text-align: center; color: white;">Collaborative Math Whiteboard</h1>
@@ -106,13 +53,13 @@
             <br>
             <div class="g-signin2" id="signInButton" scope="profile email" data-width="220" data-height="50" data-longtitle="true" data-theme="dark" data-onsuccess="onSignIn" data-onfailure="onFailure"></div>
             <br>
-            <a href="#" onclick="signOut();" id="signOutButton" style="display: none;">Sign out</a>
+            <a href="#" onclick="signOut();" id="signOutButton" style="">Sign out</a>
           </div>
         </div>
       </td>
     </table>
 
-    <script src="../server.js"></script>
+    <script src="login.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
   </body>
