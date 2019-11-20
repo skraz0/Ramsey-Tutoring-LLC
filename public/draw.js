@@ -103,16 +103,4 @@
     canvas.height = window.innerHeight;
   }
 
-  var clearCanvasIcon = document.getElementById('clearIcon');
-  clearCanvasIcon.addEventListener('click', emitAndClear);
-
-  function emitAndClear() {
-    socket.emit('clear');
-    clearCanvas();
-  }
-
-  function clearCanvas() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-  }
-
 })();
