@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   aria-hidden="true"
+   focusable="false"
+   data-prefix="fas"
+   data-icon="palette"
+   class="svg-inline--fa fa-palette fa-w-16"
+   role="img"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg3725"
+   sodipodi:docname="palette-solid-black.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata3731">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3729" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1000"
+     id="namedview3727"
+     showgrid="false"
+     inkscape:zoom="1.5208438"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3725" />
+  <path
+     fill="#1561ad"
+     d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+     id="path3723" />
+  <rect
+     style="fill:none"
+     id="rect3747"
+     width="96.205917"
+     height="70.50708"
+     x="56.010296"
+     y="48.761906" />
+  <rect
+     style="fill:none"
+     id="rect3749"
+     width="70.50708"
+     height="36.900902"
+     x="23.063063"
+     y="15.155727" />
+  <rect
+     style="fill:none;stroke:#ff0000;opacity:0.13999998"
+     id="rect3751"
+     width="512.65894"
+     height="512.65894"
+     x="0"
+     y="0" />
+  <rect
+     style="opacity:0;fill:none;stroke:#ff0000"
+     id="rect3753"
+     width="83.685974"
+     height="56.669239"
+     x="2.6357787"
+     y="81.050194" />
+  <rect
+     style="opacity:0.01;fill:none;stroke:#ff0000"
+     id="rect4562"
+     width="54.033463"
+     height="71.824966"
+     x="23.063063"
+     y="52.056629" />
+  <rect
+     style="opacity:1;fill:none;stroke:#000000;stroke-width:15.11811066"
+     id="rect4575"
+     width="495.56317"
+     height="496.2207"
+     x="8.5478868"
+     y="8.5478868"
+     ry="0" />
+</svg>
