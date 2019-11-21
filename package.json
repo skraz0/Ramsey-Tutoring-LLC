@@ -15,20 +15,15 @@
   "license": "ISC",
   "dependencies": {
     "assert": "^2.0.0",
-<<<<<<< HEAD
     "cookie-session": "^1.3.3",
-=======
     "body-parser": "^1.19.0",
->>>>>>> dfae3348f3a25674856f9f8835da18469178ce2a
     "express": "^4.17.1",
     "google-auth-library": "^5.3.0",
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.11",
-<<<<<<< HEAD
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
-=======
->>>>>>> dfae3348f3a25674856f9f8835da18469178ce2a
+
     "socket.io": "^2.2.0"
   }
 }
