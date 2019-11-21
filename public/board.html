@@ -4,28 +4,31 @@
     <meta charset="utf-8">
     <title>Session - Ramsey Tutoring LLC</title>
     <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./snackbar.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
   </head>
   <body>
+
+    <div id='snackbar'>Eraser Selected</div>
 
     <!-- side nav bar -->
     <div id="mySidenav" class="sidenav">
      <a href="#" id="pen"><img src="/icons/pen-solid.svg" height="30" width="30" onclick="sizeDropdown()" class="sizeDropdown"></a>
      <div id="sizeDropdown" class="sizes">
-       <input  id="size" type="range" min="2" max="50" value="25">
+       <input id="size" type="range" min="2" max="15" value="5">
      </div>
-     <a href="#" id="palette"><img id="paletteIcon" src="/icons/palette-solid.svg" height="30" width="30" onclick="colorDropdown()" class="colorDropdown"></a>
+     <a href="#" id="palette"><img id="paletteIcon" src="/icons/palette-solid-black.svg" height="30" width="30" onclick="colorDropdown()" class="colorDropdown"></a>
      <div id="colorDropdown" class="colors">
        <div class="color black" onclick="changeBlack()"></div>
        <div class="color red" onclick="changeRed()"></div>
        <div class="color green" onclick="changeGreen()"></div>
        <div class="color blue" onclick="changeBlue()"></div>
      </div>
-     <a href="#" id="eraser" onclick="showEraserToast()"><img src="/icons/eraser-solid.svg" height="30" width="30" class="color white"></a>
+     <a href="#" id="eraser" onclick="eraserToast()"><img src="/icons/eraser-solid.svg" height="30" width="30" class="color white"></a>
      <!-- <a href="#" id="clear"><img src="/icons/trash-solid.svg" height="30" width="30" id="clearIcon"></a> -->
      <a href="#" id="chat"><img src="/icons/comment-dots-solid.svg" height="30" width="30" onclick="openForm()" class="chatButton"></a>
      <a href="#" id="chat"> <img src="/icons/chat-notification.png" height="30" width="30" onclick="openForm()" class="chatButton" hidden> </a>
-     <!-- <a href="#" id="voice"><img src="/icons/microphone-solid.svg" height="30" width="30"></a> -->
+     <a href="#" id="voice"><img src="/icons/microphone-solid.svg" height="30" width="30"></a>
      <a href="/" id="logout"><img src="/icons/sign-out-alt-solid.svg" height="30" width="30"></img></a>
     </div>
 
