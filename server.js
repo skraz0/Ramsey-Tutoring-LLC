@@ -64,9 +64,6 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
-app.get('/login', function (req, res) {
-  res.sendFile(__dirname + '/public/login.html');
-});
 app.get('/terms', passport.authenticate('google'), function (req, res) {
   res.sendFile(__dirname + '/public/ToS.html');
 });
