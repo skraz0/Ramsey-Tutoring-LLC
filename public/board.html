@@ -26,22 +26,20 @@
      </div>
      <a href="#" id="eraser" onclick="eraserToast()"><img src="/icons/eraser-solid.svg" height="30" width="30" class="color white"></a>
      <!-- <a href="#" id="clear"><img src="/icons/trash-solid.svg" height="30" width="30" id="clearIcon"></a> -->
-     <a href="#" id="chat"><img src="/icons/comment-dots-solid.svg" height="30" width="30" onclick="openForm()" class="chatButton"></a>
+     <a href="#" id="chat"><img id="chatIcon" src="/icons/comment-dots-solid.svg" height="30" width="30" onclick="openForm()" class="chatButton"></a>
      <a href="#" id="chat"> <img src="/icons/chat-notification.png" height="30" width="30" onclick="openForm()" class="chatButton" hidden> </a>
      <a href="#" id="voice"><img src="/icons/microphone-solid.svg" height="30" width="30"></a>
-     <a href="/" id="logout"><img src="/icons/sign-out-alt-solid.svg" height="30" width="30"></img></a>
+     <a href="/scheduler" id="logout"><img src="/icons/sign-out-alt-solid.svg" height="30" width="30"></img></a>
     </div>
 
     <div class="chat-popup" id="form">
     <br>
     	<div class="chatArea">
-    			<ul id="messages" class="messages"></ul>
-    		</div>
-    			  <form id="messages"action="" class="form-container messages">
-
-    					<input id="m" class="textarea" type="text" name="" autocomplete="off" placeholder="Press Enter to Send" value="">
-
-    			  </form>
+    	   <ul id="messages" class="messages"></ul>
+    	</div>
+        <form id="messages" action="" class="form-container messages">
+          <input id="m" class="textarea" type="text" name="" autocomplete="off" placeholder="Press Enter to Send" value="">
+        </form>
     </div>
 
 
@@ -132,8 +130,7 @@
         });
 
         socket.on('chat message', function(msg){
-
-          $('#messages').append($('<div>').text("google name: " + msg));
+          $('#messages').append($('<div>').text(socket.id + ": " + msg));
           $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
         });
       });

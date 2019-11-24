@@ -105,4 +105,9 @@
     canvas.height = window.innerHeight;
   }
 
+  window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = 'You will be disconnected from this session if you leave this page.';
+  });
+
 })();
