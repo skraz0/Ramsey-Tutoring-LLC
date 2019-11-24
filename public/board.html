@@ -133,7 +133,7 @@
 
         socket.on('chat message', function(msg){
 
-          $('#messages').append($('<div>').text(socket.id + ": " + msg));
+          $('#messages').append($('<div>').text("google name: " + msg));
           $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
         });
       });
