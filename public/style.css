@@ -304,6 +304,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background: #f1f1f1;
   resize: none;
   min-height: 200px;
+  border-color: black;
 }
 
 /* When the textarea gets focus, do something */
@@ -328,13 +329,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 #m {
-
   width: 100%;
 }
+
+#messages {
+  overflow: auto;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  max-height: 200px;
+}
+
+#messages div {
+  /* border:1px solid #e2e4e3;
+  border-radius: 5px;
+  margin:5px;
+  padding:10px; */
+}
+
 .chatArea{
   height: 200px;
   overflow-y: scroll;
   flex-grow: 1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
 }
 
 /* Add some hover effects to buttons */
@@ -364,6 +381,18 @@ input[type=text]{
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.hidelogo{
+    position: absolute;
+    width: 1000px;
+    height: 125px;
+    background: #222;
+    left: 0px;
+    top: 40px;
+    z-index:999;
+    display: block;
+    color: #fff;
 }
 
 /* td {

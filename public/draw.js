@@ -5,10 +5,12 @@
   var socket = io();
   var canvas = document.getElementsByClassName('canvas')[0];
   var colors = document.getElementsByClassName('color');
+  var size = parseInt(document.getElementById('size').value);
   var context = canvas.getContext('2d');
 
   var current = {
-    color: 'black'
+    color: 'black',
+    size: '34'
   };
   var drawing = false;
 
@@ -38,7 +40,7 @@
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
     context.strokeStyle = color;
-    context.lineWidth = parseInt(document.getElementById("size").value);;
+    context.lineWidth = parseInt(document.getElementById("size").value);
     context.stroke();
     context.closePath();
 
@@ -103,16 +105,9 @@
     canvas.height = window.innerHeight;
   }
 
-  var clearCanvasIcon = document.getElementById('clearIcon');
-  clearCanvasIcon.addEventListener('click', emitAndClear);
-
-  function emitAndClear() {
-    socket.emit('clear');
-    clearCanvas();
-  }
-
-  function clearCanvas() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-  }
+  window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = 'You will be disconnected from this session if you leave this page.';
+  });
 
 })();

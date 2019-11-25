@@ -4,15 +4,59 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 const assert = require('assert');
-
-const MongoClient = require('mongodb').MongoClient;
-const url = process.env.MONGODB_URI || "mongodb://heroku_whtv069m:p69n37kqpkjoj5adi8qrln53jd@ds043338.mlab.com:43338/heroku_whtv069m";
+const mongoose = require('mongoose');
+const passport = require('passport');
+const passportSetup = require('./config/passport-setup');
+const keys = require('./config/keys.js');
+const Schema = mongoose.Schema;
+const cookieSession = require('cookie-session');
+const mongodb = require('mongodb');
+//const url = process.env.MONGODB_URI || "mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069m";
 
 // Use connect method to connect to the Server
-MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  client.close();
-});
+mongoose.connect("mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069m",{
+  useNewUrlParser:true},
+    function(error){
+      if(error){
+        console.log(error);
+      }
+      else{
+        console.log("connected to database");
+      }
+    });
+//
+// const userSchema = new Schema({
+//   googleId: String,
+//   name: String,
+//   email: String,
+//   type: String
+// });
+//
+// const User = mongoose.model('user', userSchema);
+// module.exports = User;
+//
+// new User({
+//   googleId: profile.getId(),
+//   name: profile.getGivenName(),
+//   email: profile.getEmail(),
+//   type: student,
+// }).save().then((newUser)=>{
+//   console.log('new user created'+ newUser);
+// });
+// const db = client.db('heroku_whtv069m');
+// var cursor = db.collection('Users').find({});
+app.use(cookieSession({
+  maxAge: 24*60*60*1000,
+  keys:[keys.session.cookieKey]
+}));
+//initialize passportSetup
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.get('/google', passport.authenticate('google',{
+  scope:['profile']
+}));
 
 app.use(express.static('public'));
 
@@ -20,10 +64,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
-app.get('/login', function (req, res) {
-  res.sendFile(__dirname + '/public/login.html');
-});
-app.get('/terms', function (req, res) {
+app.get('/terms', passport.authenticate('google'), function (req, res) {
   res.sendFile(__dirname + '/public/ToS.html');
 });
 app.get('/terms-preview', function (req, res) {
@@ -34,6 +75,10 @@ app.get('/scheduler', function (req, res) {
 });
 app.get('/session', function (req, res) {
   res.sendFile(__dirname + '/public/board.html');
+});
+
+app.get('/auth/google', passport.authenticate('google', {scope:['profile']}), function(req,res){
+
 });
 
 // start of socket.io stuff
@@ -63,3 +108,5 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
+
+// server queries
