@@ -335,23 +335,30 @@ body {font-family: Arial, Helvetica, sans-serif;}
 #messages {
   overflow: auto;
   position: absolute;
-  bottom: 0px;
-  width: 100%;
-  max-height: 200px;
+  bottom: 50px;
+  width: 111.5%;
+  max-height: 241px;
 }
 
 #messages div {
-  /* border:1px solid #e2e4e3;
+  border: 1px solid #e2e4e3;
   border-radius: 5px;
-  margin:5px;
-  padding:10px; */
+  margin: 5px;
+  padding: 10px;
+}
+
+ul {
+  right: 0px;
 }
 
 .chatArea{
-  height: 200px;
-  overflow-y: scroll;
+  height: 230px;
   flex-grow: 1;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+}
+
+.chatMessages {
+
 }
 
 /* Add some hover effects to buttons */
