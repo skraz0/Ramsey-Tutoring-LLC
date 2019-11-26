@@ -70,6 +70,9 @@ app.get('/terms', passport.authenticate('google'), function (req, res) {
 app.get('/terms-preview', function (req, res) {
   res.sendFile(__dirname + '/public/ToS_preview.html');
 });
+app.get('/dashboard', function (req, res) {
+  res.sendFile(__dirname + '/public/dashboard.html');
+});
 app.get('/scheduler', function (req, res) {
   res.sendFile(__dirname + '/public/scheduler.html');
 });

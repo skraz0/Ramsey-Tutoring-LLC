@@ -20,7 +20,7 @@ body {
 
 #watermark {
   position: fixed;
-  opacity: 0.2;
+  /* opacity: 0.2; */
   z-index: -5;
   color: white;
 }
@@ -402,6 +402,58 @@ input[type=text]{
     color: #fff;
 }
 
-/* td {
-  border: 1px solid black;
+/* passwordEntry Page */
+/* .pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.password.page {
+  background-color: #000;
+}
+
+.password.page .form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.password.page .form .passwordInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.password.page .title {
+  font-size: 200%;
+}
+
+.password.page .passwordInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.password.page .title, .password.page .passwordInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+.board.page {
+  display: none;
 } */
