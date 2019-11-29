@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Terms - Ramsey Tutoring LLC</title>
     <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./terms.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
     <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,7 +30,7 @@
       </div>
     </div>
 
-    <img src="tropical-background-4.jpg" id="watermark">
+    <img src="/backgrounds/camera2.jpg" id="watermark">
 
     <br><br><br>
 
@@ -37,7 +38,7 @@
     <div class="card" style="width: 50%">
      <div class="container">
        <h2>Terms & Conditions</h2>
-       <div style="height:500px;width:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+       <div style="height:500px;width:700px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
          <h4>Agreement between User and Ramsey’s Tutoring LLC</h4>
          <p>By using Ramsey’s Tutoring service, you are agreeing to be bound by these Terms. Please read the following Terms and Conditions carefully.</p>
          <h4>Personal Verification</h4>
@@ -59,8 +60,10 @@
          <p>If you have any questions about these Terms, please contact me at <b>c.ramsey.tutoring@gmail.com</b></p>
        </div>
        <br>
-       <form class="ToS" action="/dashboard">
-         <input type="checkbox" name="agree" value="Yes"> I agree to all terms shown above. <br><br>
+       <form class="ToS" action="/dashboard" onsubmit="return validateCheckbox(this);">
+         <input type="checkbox" id="agree" name="agree">
+         <label for="agree" id="agreeLabel"> I agree to all terms shown above.</label>
+         <br><br>
          <input type="submit" value="Submit" class="btn btn-color">
        </form>
      </div>
@@ -68,6 +71,18 @@
 
     <script src="login.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+    <script>
+      function validateCheckbox(form)
+      {
+        if(!form.agree.checked) {
+          alert ("Please indicate that you agree to the Terms and Conditions");
+          form.agree.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
 
   </body>
 </html>
