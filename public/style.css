@@ -396,7 +396,7 @@ input[type=text]{
 
 .hidelogo{
     position: absolute;
-    width: 1200px;
+    width: 100%;
     height: 125px;
     font-size: 17px;
     font-family: Arial;
