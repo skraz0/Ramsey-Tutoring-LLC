@@ -396,14 +396,17 @@ input[type=text]{
 
 .hidelogo{
     position: absolute;
-    width: 1000px;
+    width: 1200px;
     height: 125px;
-    background: #222;
+    font-size: 17px;
+    font-family: Arial;
+    background: #1561ad;
     left: 0px;
     top: 40px;
     z-index:999;
     display: block;
     color: #fff;
+    text-align: center;
 }
 
 /* passwordEntry Page */
