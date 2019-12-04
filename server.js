@@ -24,31 +24,14 @@ mongoose.connect("mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069
         console.log("connected to database");
       }
     });
-//
-// const userSchema = new Schema({
-//   googleId: String,
-//   name: String,
-//   email: String,
-//   type: String
-// });
-//
-// const User = mongoose.model('user', userSchema);
-// module.exports = User;
-//
-// new User({
-//   googleId: profile.getId(),
-//   name: profile.getGivenName(),
-//   email: profile.getEmail(),
-//   type: student,
-// }).save().then((newUser)=>{
-//   console.log('new user created'+ newUser);
-// });
-// const db = client.db('heroku_whtv069m');
-// var cursor = db.collection('Users').find({});
+
+//cookie stuff
 app.use(cookieSession({
   maxAge: 24*60*60*1000,
   keys:[keys.session.cookieKey]
 }));
+
+
 //initialize passportSetup
 app.use(passport.initialize());
 app.use(passport.session());
