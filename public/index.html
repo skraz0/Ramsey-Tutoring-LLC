@@ -35,7 +35,7 @@
         <p style="font-family: Arial; text-align: center; color: black; margin:30px;">A great solution for math tutoring from anywhere you please. Done by Catherine Ramsey of the SELU Math Department.</p>
         <br>
         <form action="/session" style="display: inline-block; padding: 5px 0px 5px;">
-          <input type="submit" class="btn btn-color" value="Test It Out" />
+          <input type="submit" class="btn btn-color" value="Test It Out"/>
         </form>
         <form action="/terms-preview">
           <input type="submit" class="btn btn-color" value="Terms of Service"/>
@@ -46,9 +46,9 @@
           <div class="container">
             <h2>Login</h2>
             <br>
-            <div class="g-signin2" id="signInButton" scope="profile email" data-width="220" data-height="50" data-longtitle="true" data-theme="dark" data-onsuccess="onSignIn" data-onfailure="onFailure"></div>
-            <br><br>
-            <a href="/auth/google" class="btn btn-color">Sign In</a>
+            <!-- <div class="g-signin2" id="signInButton" scope="profile email" data-width="220" data-height="50" data-longtitle="true" data-theme="dark" data-onsuccess="onSignIn" data-onfailure="onFailure"></div>
+            <br><br> -->
+            <a href="/auth/google" class="btn btn-color"><img src="/icons/google.png" id="googleLoginButton">&nbsp;Sign In</a>
             <br><br><br>
             <div class="signOut" style="">
               <a href="#" onclick="signOut();" id="signOutButton" class="btn btn-color">Sign out</a>
