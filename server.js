@@ -60,28 +60,42 @@ app.get('/google', passport.authenticate('google',{
 
 app.use(express.static('public'));
 
+//auth check
+const authCheck = (req,res,next)=>{
+    if(!req.user){
+      res.redirect('/');
+    } else{
+      next();
+    }
+};
+
 // endpoints for all pages of the site
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
-app.get('/terms', passport.authenticate('google'), function (req, res) {
+app.get('/terms', passport.authenticate('google'), authCheck, function (req, res) {
   res.sendFile(__dirname + '/public/ToS.html');
 });
 app.get('/terms-preview', function (req, res) {
   res.sendFile(__dirname + '/public/ToS_preview.html');
 });
-app.get('/dashboard', function (req, res) {
+app.get('/dashboard', authCheck, function (req, res) {
   res.sendFile(__dirname + '/public/dashboard.html');
 });
-app.get('/scheduler', function (req, res) {
+app.get('/scheduler', authCheck, function (req, res) {
   res.sendFile(__dirname + '/public/scheduler.html');
 });
-app.get('/session', function (req, res) {
+app.get('/session', authCheck, function (req, res) {
   res.sendFile(__dirname + '/public/board.html');
 });
 
 app.get('/auth/google', passport.authenticate('google', {scope:['profile']}), function(req,res){
 
+});
+app.get('/logout', (req,res) =>{
+  req.logout();
+  res.redirect('/');
+  console.log("user signed out");
 });
 
 // start of socket.io stuff
