@@ -113,7 +113,21 @@ app.get('/terms-preview', function (req, res) {
   res.sendFile(__dirname + '/public/ToS_preview.html');
 });
 app.get('/dashboard', authCheck, function (req, res) {
-  res.sendFile(__dirname + '/public/dashboard.html');
+  User.findById(req.user).then((user)=>{
+    var type=user.type;
+    if(type=="student"){
+      res.sendFile(__dirname + '/public/dashboard.html');
+    }else if(type=="teacher"){
+      res.sendFile(__dirname + '/public/dashboard_a.html');
+    }else{
+      function wrongLogin(){
+        alert("You are not logged in redirecting to homepage");
+      }
+      req.logout();
+      res.redirect('/');
+    }
+
+  });
 });
 app.get('/scheduler', authCheck, function (req, res) {
   res.sendFile(__dirname + '/public/scheduler.html');
