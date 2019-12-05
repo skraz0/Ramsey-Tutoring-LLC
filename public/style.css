@@ -184,7 +184,10 @@ body {
 }
 
 .btn-disabled {
-  :disabled;
+  background-color: grey;
+  border-color: grey;
+  color: white;
+  cursor: no-drop;
 }
 
 .send-color {
