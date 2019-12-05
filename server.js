@@ -12,7 +12,7 @@ const Schema = mongoose.Schema;
 const cookieSession = require('cookie-session');
 const mongodb = require('mongodb');
 const GoogleStrategy = require ('passport-google-oauth20');
-const requirejs = require('requirejs');
+//const requirejs = require('requirejs');
 //const url = process.env.MONGODB_URI || "mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069m";
 // Use connect method to connect to the Server
 mongoose.connect("mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069m",{
