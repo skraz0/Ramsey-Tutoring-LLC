@@ -11,8 +11,9 @@ const keys = require('./config/keys.js');
 const Schema = mongoose.Schema;
 const cookieSession = require('cookie-session');
 const mongodb = require('mongodb');
+const GoogleStrategy = require ('passport-google-oauth20');
+const requirejs = require('requirejs');
 //const url = process.env.MONGODB_URI || "mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069m";
-
 // Use connect method to connect to the Server
 mongoose.connect("mongodb://admin:cmps411@ds043338.mlab.com:43338/heroku_whtv069m",{
   useNewUrlParser:true},
@@ -35,6 +36,56 @@ app.use(cookieSession({
 //initialize passportSetup
 app.use(passport.initialize());
 app.use(passport.session());
+
+//passportSetup
+//const Schema = mongoose.Schema;
+const userSchema = new Schema({
+  googleId: String,
+  name: String,
+  type: String
+});
+
+const User = mongoose.model('user', userSchema);
+module.export= User;
+passport.serializeUser((user, done)=>{
+    done(null, user.id);
+});
+
+passport.deserializeUser((id, done)=>{
+    User.findById(id).then((user)=>{
+      done(null, user.id);
+    });
+});
+
+passport.use(
+  new GoogleStrategy({
+    callbackURL:'/terms',
+    clientID: keys.google.clientID,
+    clientSecret: keys.google.clientSecret
+  }, (accessToken, refreshToken, profile, done) =>{
+    //passport callback function
+    console.log(profile);
+    User.findOne({googleId: profile.id}).then((currentUser)=>{
+      if(currentUser){
+        console.log(currentUser);
+        done(null, currentUser);
+      }
+      else{
+        new User({
+          googleId: profile.id,
+          name: profile.name.givenName,
+          type: "student"
+            }).save().then((newUser)=>{
+             console.log('new user created'+ newUser);
+             done(null, newUser);
+        });
+      }
+    });
+
+
+  })
+)
+
 
 
 app.get('/google', passport.authenticate('google',{
@@ -69,7 +120,12 @@ app.get('/scheduler', authCheck, function (req, res) {
   res.sendFile(__dirname + '/public/scheduler.html');
 });
 app.get('/session', authCheck, function (req, res) {
-  res.sendFile(__dirname + '/public/board.html');
+  User.findById(req.user).then((user)=>{
+    var name=user.name;
+    console.log(name);
+    res.sendFile(__dirname + '/public/board.html');
+  });
+
 });
 
 app.get('/auth/google', passport.authenticate('google', {scope:['profile']}), function(req,res){
