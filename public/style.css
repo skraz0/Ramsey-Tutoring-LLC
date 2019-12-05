@@ -165,7 +165,7 @@ body {
 /* button on the login card */
 .btn {
   border: 2px solid black;
-  background-color: #1dbab4;
+  background-color: #1fad9d;
   color: black;
   padding: 10px 28px;
   font-size: 16px;
@@ -174,7 +174,7 @@ body {
 }
 
 .btn-color {
-  border-color: #1dbab4;
+  border-color: #1fad9d;
   color: white
 }
 
@@ -398,7 +398,7 @@ input[type=text]{
 .hidelogo{
     position: absolute;
     width: 100%;
-    height: 125px;
+    height: 130px;
     font-size: 17px;
     font-family: Arial;
     background: #1561ad;
