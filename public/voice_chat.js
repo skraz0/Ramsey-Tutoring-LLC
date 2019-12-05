@@ -1,46 +1,38 @@
+var getUserMedia = require('getusermedia')
 
-var opentok = new opentok.OpenTok(46465442, db64a8d6c002d17bf3387ec0c112ce4ff649c57c);
-var sessionId;
-opentok.createSession({mediaMode:"routed"}, function(error, session) {
-  if (error) {
-    console.log("Error creating session:", error)
-  } else {
-    sessionId = session.sessionId;
-    console.log("Session ID: " + sessionId);
-  }
-});
-var opentok = new opentok.OpenTok(46465442,  db64a8d6c002d17bf3387ec0c112ce4ff649c57c);
-var sessionId;
-opentok.createSession({mediaMode:"relayed"}, function(error, session) {
-  if (error) {
-    console.log("Error creating session:", error)
-  } else {
-    sessionId = session.sessionId;
-    console.log("Session ID: " + sessionId);
-  }
-});
-var opentok = new OpenTok(46465442, db64a8d6c002d17bf3387ec0c112ce4ff649c57c);
+getUserMedia({ video: false, audio: true }, function (err, stream) {
+  if (err) return console.error(err)
 
-//Generate a basic session. Or you could use an existing session ID.
-var sessionId;
-opentok.createSession({}, function(error, session) {
-  if (error) {
-    console.log("Error creating session:", error)
-  } else {
-    sessionId = session.sessionId;
-    console.log("Session ID: " + sessionId);
-  }
-});
+  var Peer = require('simple-peer')
+  var peer = new Peer({
+    initiator: location.hash === '#init',
+    trickle: false,
+    stream: stream
+  })
 
-var token = opentok.generateToken(sessionId);
-var opentok = new OpenTok(46465442, db64a8d6c002d17bf3387ec0c112ce4ff649c57c);
+  peer.on('signal', function (data) {
+    document.getElementById('yourId').value = JSON.stringify(data)
+  })
 
-//Generate a basic session. Or you could use an existing session ID.
-var sessionId;
-var token
-opentok.createSession({}, function(error, session) {
-  if (error) {
-    console.log("Error creating session:", error)
-  } else {
-    sessionId = session.sessionId;
-    console.log("Session ID: " + sessionId);}});
+  document.getElementById('connect').addEventListener('click', function () {
+    var otherId = JSON.parse(document.getElementById('otherId').value)
+    peer.signal(otherId)
+  })
+
+  document.getElementById('send').addEventListener('click', function () {
+    var yourMessage = document.getElementById('yourMessage').value
+    peer.send(yourMessage)
+  })
+
+  peer.on('data', function (data) {
+    document.getElementById('messages').textContent += data + '\n'
+  })
+
+  peer.on('stream', function (stream) {
+    var video = document.createElement('video')
+    document.body.appendChild(video)
+
+    video.src = window.URL.createObjectURL(stream)
+    video.play()
+  })
+})

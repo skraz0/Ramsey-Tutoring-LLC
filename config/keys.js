@@ -7,5 +7,9 @@ module.exports = {
   },
   session:{
     cookieKey:'thisisthecookiekey411'
+  },
+  calendar:{
+    clientID:'149978925763-91hmi1df8a8t4amfvg66ebbejskgt9ip.apps.googleusercontent.com',
+    clientSecret:'AANeU5XaZ00SSWgUAJCOAy-K'
   }
 };

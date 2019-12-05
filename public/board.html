@@ -131,7 +131,7 @@
         });
 
         socket.on('chat message', function(msg){
-          $('#messages').append($('<div>').append('<b> google name: </b>' + msg));
+          $('#messages').append($('<div>').append('<b></b>' + msg));
           $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
         });
       });
