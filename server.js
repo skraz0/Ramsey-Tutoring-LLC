@@ -107,7 +107,14 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 app.get('/terms', passport.authenticate('google'), authCheck, function (req, res) {
-  res.sendFile(__dirname + '/public/ToS.html');
+  User.findById(req.user).then((user)=>{
+    var type=user.type;
+    if(type=="student"){
+      res.sendFile(__dirname + '/public/ToS.html');
+    }else if(type=="teacher"){
+      res.sendFile(__dirname + '/public/dashboard_a.html');
+    }
+  });
 });
 app.get('/terms-preview', function (req, res) {
   res.sendFile(__dirname + '/public/ToS_preview.html');
